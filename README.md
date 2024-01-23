@@ -35,8 +35,7 @@ Add a new Model
 Clicking job1
 ![Alt text](image-1.png)
 
-2. Database Migration and Model Creation
-
+2. Database Migration & Model Creation & Factory
 
     > Problem: 
     >> It seems that laravel will execute SELECT * FROM "modulename"+"s" ,
@@ -44,3 +43,8 @@ Clicking job1
 
     > Solution:
     >> In database, create a table named "modulename"+"s"(jobs).
+
+3. Layout-1
+    > Learned
+    > - asset helper: asset()  
+    >   - ```<link rel="icon" href="asset('images/favicon.ico')" />```
