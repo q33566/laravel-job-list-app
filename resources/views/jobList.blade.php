@@ -12,6 +12,8 @@
 -->
 @extends('layout')
 @section('content')
+@include('partials._hero')
+@include('partials._search')
 <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
 @if(count($jobList)==0)
  <p>No jobs available</p>
@@ -27,7 +29,7 @@
         />
         <div>
             <h3 class="text-2xl">
-                <a href="show.html">{{$job->title}}</a>
+                <a href="jobList/{{$job->id}}">{{$job->title}}</a>
             </h3>
             <div class="text-xl font-bold mb-4">{{$job->company}}</div>
             <ul class="flex">

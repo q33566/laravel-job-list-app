@@ -48,3 +48,6 @@ Clicking job1
     > Learned
     > - asset helper: asset()  
     >   - ```<link rel="icon" href="asset('images/favicon.ico')" />```
+    > - `@extend`
+    > - `@section`
+    > - `@endsection`
