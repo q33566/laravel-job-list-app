@@ -51,3 +51,19 @@ Clicking job1
     > - `@extend`
     > - `@section`
     > - `@endsection`
+4. Layout-2
+    > Learned
+    > - `@include`
+    > Review
+    > - We can create module and store module's data in database using migrate. Also, we can use route to pass moudule's instance to layout.
+5. 
+    - <a herf = "https://laravel.com/docs/10.x/routing#implicit-binding">Implicit Binding</a>
+         ```
+        Route::get('/jobList/{job}',function(Job $job){
+            return view('job',[
+                'job' => $job
+            ]);
+        });
+        ```
+    - <a herf = "https://laravel.com/docs/10.x/blade#components">blade component</a>
+

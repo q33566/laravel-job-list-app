@@ -1,25 +1,3 @@
-<!-- PHP syntax without blade
-<h1><?php echo $heading ?></h1>
-<?php foreach ($jobList as $job): ?>
-    <h2><?php echo $job['title'] ?></h2>
-    <p><?php echo $job['description'] ?></p>
-<?php endforeach; ?> 
--->
-<!-- blade provide php directive 
-@php
-    
-@endphp
--->
-@extends('layout')
-@section('content')
-@include('partials._hero')
-@include('partials._search')
-<div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
-@if(count($jobList)==0)
- <p>No jobs available</p>
-@endif
-
-@foreach($jobList as $job)
 <x-card>
     <div class="flex">
         <img
@@ -60,8 +38,3 @@
         </div>
     </div>
 </x-card>
-@endforeach
-</div>
-@endsection
-
-

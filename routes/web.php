@@ -21,9 +21,9 @@ Route::get('/', function () {
     ]);
 });
 // list single job
-Route::get('/jobList/{id}',function($id){
+Route::get('/jobList/{job}',function(Job $job){
     return view('job',[
-        'job' => Job::find($id)
+        'job' => $job
     ]);
 });
 /*route basic
