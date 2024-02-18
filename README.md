@@ -67,3 +67,6 @@ Clicking job1
         ```
     - <a herf = "https://laravel.com/docs/10.x/blade#components">blade component</a>
 
+    https://www.youtube.com/watch?v=MYyJ4PuL4pY&t=2826s
+    next start from 1:34:55
+
