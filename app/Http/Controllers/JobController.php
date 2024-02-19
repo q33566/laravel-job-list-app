@@ -9,7 +9,7 @@ class JobController extends Controller
 {
     public function index(){
         return view('listings.index',[
-            'jobList' => Job::latest()->filter(request(['tag']))->get()
+            'jobList' => Job::latest()->filter(request(['tag', 'search']))->get()
         ]);
     }
 
