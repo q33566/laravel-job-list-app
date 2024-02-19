@@ -1,5 +1,4 @@
 <!-- PHP syntax without blade
-<h1><?php echo $heading ?></h1>
 <?php foreach ($jobList as $job): ?>
     <h2><?php echo $job['title'] ?></h2>
     <p><?php echo $job['description'] ?></p>
@@ -38,7 +37,7 @@
                 <ul class="flex">
                     @foreach ($tags as $tag)
                         <li class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs">
-                            <a href="/?tag">{{$tag}}</a>
+                            <a href="/?tag={{$tag}}">{{$tag}}</a>
                         </li>
                     @endforeach
                 </ul>
