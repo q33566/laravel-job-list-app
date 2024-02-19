@@ -15,8 +15,42 @@ use Illuminate\Support\Facades\Route;
 */
 // list all jobs
 Route::get('/', [JobController::class, 'index']);
+
+// create job
+Route::get('/jobList/create',[JobController::class, 'create']);
+
+// show create form
+Route::post('/jobList',[JobController::class, 'store']);
+
+
+
+
+
+
+
+
 // list single job
 Route::get('/jobList/{job}',[JobController::class, 'show']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*route basic
 Route::get('/hello', function () {
     return response('<h1>hello<h1>')
