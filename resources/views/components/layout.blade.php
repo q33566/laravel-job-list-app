@@ -12,6 +12,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="//unpkg.com/alpinejs" defer></script>
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -47,7 +48,7 @@
         </nav>
 
         <main>
-    {{-- VIEW OUTPUT --}}
+            {{-- VIEW OUTPUT --}}
             {{$slot}}
         </main>
         <footer
@@ -61,8 +62,6 @@
                 >Post Job</a
             >
         </footer>
-    </body>
-</html>
-
+        <x-flash-message/>
     </body>
 </html>

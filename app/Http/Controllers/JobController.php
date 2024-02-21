@@ -10,7 +10,7 @@ class JobController extends Controller
 {
     public function index(){
         return view('listings.index',[
-            'jobList' => Job::latest()->filter(request(['tag', 'search']))->get()
+            'jobList' => Job::latest()->filter(request(['tag', 'search']))->paginate(2)
         ]);
     }
 
@@ -40,7 +40,7 @@ class JobController extends Controller
         
         Job::create($formFields);
 
-        return redirect('/');
+        return redirect('/')->with('message','Listing Created!');
     }
 
 
