@@ -17,11 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [JobController::class, 'index']);
 
 // create job
-Route::get('/jobList/create',[JobController::class, 'create']);
+Route::get('/jobList/create', [JobController::class, 'create']);
 
 // show create form
-Route::post('/jobList',[JobController::class, 'store']);
+Route::post('/jobList', [JobController::class, 'store']);
 
+// edit listing page
+Route::get('/joblist/{job}/edit', [JobController::class, 'edit']);
+
+// update listing page
+Route::put('jobList/{job}', [JobController::class, 'update']);
 
 
 
@@ -30,7 +35,7 @@ Route::post('/jobList',[JobController::class, 'store']);
 
 
 // list single job
-Route::get('/jobList/{job}',[JobController::class, 'show']);
+Route::get('/jobList/{job}', [JobController::class, 'show']);
 
 
 
