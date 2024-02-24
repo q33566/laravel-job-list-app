@@ -70,3 +70,7 @@ Clicking job1
     https://www.youtube.com/watch?v=MYyJ4PuL4pY&t=2826s
     next start from 1:34:55
 
+Remember to update 
+```protected $fillable = ['title', 'company', 'location', 'website', 'email', 'description', 'tags', 'logo'];```
+when yout want to add new column to database
+
