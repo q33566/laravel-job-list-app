@@ -28,6 +28,8 @@ Route::get('/joblist/{job}/edit', [JobController::class, 'edit']);
 // update listing page
 Route::put('jobList/{job}', [JobController::class, 'update']);
 
+// delete listing page
+Route::delete('jobList/{job}', [JobController::class, 'destory']);
 
 
 

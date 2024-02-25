@@ -69,6 +69,11 @@ class JobController extends Controller
         return back()->with('message','Listing Updated!');
     }
 
+    public function destory(Job $job){
+        $job->delete();
+        return redirect('/')->with('message', 'Listing Deleted Sucessfully');
+    }
+
 
 
     
