@@ -59,7 +59,7 @@
     </x-card>
 
     <x-card class="mt-4 p-2 flex space-x-6">
-        <a href="/joblist/{{$job->id}}/edit">
+        <a href="/jobList/{{$job->id}}/edit">
             <i class="fa-solid fa-pencil"></i> Edit
         </a>
 

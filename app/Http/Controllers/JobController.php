@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use auth;
+
 use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -41,6 +43,9 @@ class JobController extends Controller
         if($request->hasFile('logo')){
             $formFields['logo'] = $request->file('logo')->store('logos','public');
         }
+
+        $formFields['user_id'] = auth()->id();
+
         Job::create($formFields);
 
         return redirect('/')->with('message','Listing Created!');
@@ -51,6 +56,12 @@ class JobController extends Controller
     }
 
     public function update(Request $request, Job $job){
+
+        //Check if the editor is owner
+        if($job->user_id != auth()->id()){
+            abort(403, 'Unauthorized Action');
+        }
+
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required'],
@@ -64,14 +75,26 @@ class JobController extends Controller
         if($request->hasFile('logo')){
             $formFields['logo'] = $request->file('logo')->store('logos','public');
         }
+
+
         $job->update($formFields);
 
         return back()->with('message','Listing Updated!');
     }
 
     public function destory(Job $job){
+        
+        //Check if the editor is owner
+        if($job->user_id != auth()->id()){
+            abort(403, 'Unauthorized Action');
+        }
+
         $job->delete();
         return redirect('/')->with('message', 'Listing Deleted Sucessfully');
+    }
+
+    public function manage(){
+        return view('listings.manage',['jobList' => auth()->user()->job()->get()]);
     }
 
 

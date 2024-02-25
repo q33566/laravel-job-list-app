@@ -19,34 +19,37 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [JobController::class, 'index']);
 
 // create job
-Route::get('/jobList/create', [JobController::class, 'create']);
+Route::get('/jobList/create', [JobController::class, 'create'])->middleware('auth');
 
 // show create form
-Route::post('/jobList', [JobController::class, 'store']);
+Route::post('/jobList', [JobController::class, 'store'])->middleware('auth');
 
 // edit listing page
-Route::get('/joblist/{job}/edit', [JobController::class, 'edit']);
+Route::get('/jobList/{job}/edit', [JobController::class, 'edit'])->middleware('auth');
 
 // update listing page
-Route::put('jobList/{job}', [JobController::class, 'update']);
+Route::put('jobList/{job}', [JobController::class, 'update'])->middleware('auth');
 
 // delete listing page
-Route::delete('jobList/{job}', [JobController::class, 'destory']);
+Route::delete('jobList/{job}', [JobController::class, 'destory'])->middleware('auth');
+
+// show manage listing page
+Route::get('jobList/manage', [JobController::class,'manage']);
 
 // list single job
 Route::get('/jobList/{job}', [JobController::class, 'show']);
 
 // show register page
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // store user information
 Route::post('/users', [UserController::class, 'store']);
 
 // user logout
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 // show login page
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
 //user login
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
