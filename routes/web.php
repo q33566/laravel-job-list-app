@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,14 +33,23 @@ Route::put('jobList/{job}', [JobController::class, 'update']);
 // delete listing page
 Route::delete('jobList/{job}', [JobController::class, 'destory']);
 
-
-
-
-
-
 // list single job
 Route::get('/jobList/{job}', [JobController::class, 'show']);
 
+// show register page
+Route::get('/register', [UserController::class, 'create']);
+
+// store user information
+Route::post('/users', [UserController::class, 'store']);
+
+// user logout
+Route::post('/logout', [UserController::class, 'logout']);
+
+// show login page
+Route::get('/login', [UserController::class, 'login']);
+
+//user login
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 
 
